@@ -1,6 +1,6 @@
 package Engine;
 
-public class func {
+public class Func {
     func() {
         
     }
