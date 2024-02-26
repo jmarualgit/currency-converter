@@ -5,6 +5,7 @@ import java.awt.Color;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.JButton;
 
 public class mainPanel extends JPanel {
     mainPanel () {
@@ -15,14 +16,17 @@ public class mainPanel extends JPanel {
 
         String currenciesList[] = {
             "USD"
-        };        
+        };
         
         JComboBox<String> intialCurrencyDropdown = new JComboBox<>(currenciesList);
         JComboBox<String> resultingCurrencyDropdown = new JComboBox<>(currenciesList);
+
+        JButton submitButton = new JButton("Submit!");
 
         this.add(inputTextField);
         this.add(intialCurrencyDropdown);
         this.add(resultTextField);
         this.add(resultingCurrencyDropdown);
+        this.add(submitButton);
     }
 }
