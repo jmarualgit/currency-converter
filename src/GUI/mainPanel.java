@@ -2,6 +2,7 @@ package GUI;
 import Engine.Func;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -30,7 +31,10 @@ public class mainPanel extends JPanel implements ActionListener {
         this.setBackground(new Color(220, 220, 220));
 
         inputTextField = new JTextField("input");
+        inputTextField.setPreferredSize(new Dimension(100, 30));
+
         resultTextField = new JTextField("result");
+        resultTextField.setPreferredSize(new Dimension(100, 30));
 
         String currencyListA[] = {
             "USD"
