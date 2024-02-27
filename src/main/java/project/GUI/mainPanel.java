@@ -1,5 +1,5 @@
-package GUI;
-import Engine.Func;
+package project.GUI;
+import project.Engine.Func;
 
 import java.awt.Color;
 import java.awt.Dimension;
