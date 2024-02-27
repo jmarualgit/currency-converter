@@ -11,6 +11,8 @@ public class Func {
         "USD", "EUR", "GBP", "INR"
     };
 
+    // from https://www.xe.com/currencytables/?from=USD&date=2024-02-25#table-section
+    // as per Feb 25, 2024, 17:00 UTC
     private Double[] currencyConversionRates = {
         1.0, 0.9227329074620213, 0.7895958240672866, 82.86140364851931
     };
