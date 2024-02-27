@@ -46,7 +46,7 @@ public class Func {
 
         double roundedAns = Math.round(answer * 100.0) / 100.0;
 
-        System.out.printf("calculated to be %s", roundedAns);
+        System.out.printf("calculated to be %s\n", roundedAns);
 
         return roundedAns;
     }
