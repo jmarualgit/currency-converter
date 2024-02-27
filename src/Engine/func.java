@@ -8,13 +8,20 @@ public class Func {
     private String resultingCurr;
 
     private String[] currencyNames = {
-        "USD", "EUR", "GBP", "INR"
+        "USD", "EUR", "GBP", "INR", "AUD", "CAD", "SGD", "CHF"
     };
 
     // from https://www.xe.com/currencytables/?from=USD&date=2024-02-25#table-section
     // as per Feb 25, 2024, 17:00 UTC
     private Double[] currencyConversionRates = {
-        1.0, 0.9227329074620213, 0.7895958240672866, 82.86140364851931
+        1.0,                        // USD
+        0.9227329074620213,         // EUR
+        0.7895958240672866,         // GBP
+        82.86140364851931,          // INR
+        1.5242213075073965,         // AUD
+        1.3504983975127547,         // CAD
+        1.3433559449788466,         // SGD
+        0.8811734628276657,         // CHF
     };
 
     private void printSubmission() {

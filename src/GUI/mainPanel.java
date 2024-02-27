@@ -41,7 +41,7 @@ public class mainPanel extends JPanel implements ActionListener {
         };
 
         String currenciesList[] = {
-            "USD", "EUR", "GBP", "INR"
+            "USD", "EUR", "GBP", "INR", "AUD", "CAD", "SGD", "CHF"
         };
         
         intialCurrencyDropdown = new JComboBox<>(currencyListA);
