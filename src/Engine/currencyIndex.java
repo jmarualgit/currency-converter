@@ -1,8 +1,11 @@
 package Engine;
 
 public class currencyIndex {
-    private static String[] currencyNames = {
-        "USD", "EUR", "GBP", "INR", "AUD", "CAD", "SGD", "CHF"
+    private static String[][] currencyNames = {
+        {"USD", "US Dollar"}, {"EUR", "Euro"}, 
+        {"GBP", "British Pound"}, {"INR", "Indian Rupee"}, 
+        {"AUD", "Australian Dollar"}, {"CAD", "Canadian Dollar"}, 
+        {"SGD", "Singapore Dollar"}, {"CHF", "Swiss Franc"}
     };
 
     // from https://www.xe.com/currencytables/?from=USD&date=2024-02-25#table-section
@@ -26,7 +29,7 @@ public class currencyIndex {
         int j = 0;
         
         for (int i = 0; i < currencyNames.length; i++) {
-            if (currencyNames[i] == name) {
+            if (currencyNames[i][0] == name) {
                 j = i;
             }
         }
