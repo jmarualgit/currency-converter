@@ -1,32 +1,70 @@
 package GUI;
+import Engine.Func;
 
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
-public class mainPanel extends JPanel {
+public class mainPanel extends JPanel implements ActionListener {
+
+    JButton submitButton;
+
+    JTextField inputTextField;
+    JTextField resultTextField;
+    JComboBox<String> intialCurrencyDropdown;
+    JComboBox<String> resultingCurrencyDropdown;
+
+    Func func; 
+
+    private String fromCurrency;
+    private String resultingCurrency;
+
+    private Double inputCurrencyAmt;
+
     mainPanel () {
         this.setBackground(new Color(220, 220, 220));
 
-        JTextField inputTextField = new JTextField("input");
-        JTextField resultTextField = new JTextField("result");
+        inputTextField = new JTextField("input");
+        resultTextField = new JTextField("result");
 
-        String currenciesList[] = {
+        String currencyListA[] = {
             "USD"
         };
-        
-        JComboBox<String> intialCurrencyDropdown = new JComboBox<>(currenciesList);
-        JComboBox<String> resultingCurrencyDropdown = new JComboBox<>(currenciesList);
 
-        JButton submitButton = new JButton("Submit!");
+        String currenciesList[] = {
+            "USD", "EUR", "GBP", "INR"
+        };
+        
+        intialCurrencyDropdown = new JComboBox<>(currencyListA);
+        resultingCurrencyDropdown = new JComboBox<>(currenciesList);
+
+        submitButton = new JButton("Submit!");
+
+        submitButton.addActionListener(this);
 
         this.add(inputTextField);
         this.add(intialCurrencyDropdown);
         this.add(resultTextField);
         this.add(resultingCurrencyDropdown);
         this.add(submitButton);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+        if (e.getSource() == submitButton) {
+            inputCurrencyAmt = Double.parseDouble(inputTextField.getText());
+            fromCurrency = (String) intialCurrencyDropdown.getSelectedItem();
+            resultingCurrency = (String) resultingCurrencyDropdown.getSelectedItem();
+
+            func = new Func(inputCurrencyAmt, fromCurrency, resultingCurrency);
+
+            resultTextField.setText(String.valueOf(func.calculate()));
+        }
     }
 }
