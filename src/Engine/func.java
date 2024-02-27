@@ -20,7 +20,7 @@ public class Func {
     }
 
     public double calculate() {
-        answer = inputAmt * currencyIndex.getConversionRate(this.resultingCurr);
+        answer = inputAmt * currencyIndex.getConversionRate(this.initialCurr, this.resultingCurr);
 
         double roundedAns = Math.round(answer * 100.0) / 100.0;
 

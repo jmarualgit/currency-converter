@@ -10,6 +10,7 @@ public class currencyIndex {
 
     // from https://www.xe.com/currencytables/?from=USD&date=2024-02-25#table-section
     // as per Feb 25, 2024, 17:00 UTC
+    // FROM USD
     private static Double[] currencyConversionRates = {
         1.0,                        // USD
         0.9227329074620213,         // EUR
@@ -25,15 +26,48 @@ public class currencyIndex {
 
     }
 
-    public static double getConversionRate(String name) {
-        int j = 0;
+    public static double getConversionRate(String inputName, String resultingName) {
+        double conversionRate = 0;
         
-        for (int i = 0; i < currencyNames.length; i++) {
-            if (currencyNames[i][0] == name) {
-                j = i;
+        if (inputName != "USD") {
+            // find conversion from input to USD
+            double conversionFromInputToUSD = 0;
+            double conversionFromUSDtoResult = 0;
+            int j = 0;
+        
+            for (int i = 0; i < currencyNames.length; i++) {
+                if (currencyNames[i][0] == inputName) {
+                    j = i;
+                }
             }
-        }
 
-        return currencyConversionRates[j];
+            conversionFromInputToUSD = currencyConversionRates[j];
+
+            // find conversion from USD to output
+            j = 0;
+        
+            for (int i = 0; i < currencyNames.length; i++) {
+                if (currencyNames[i][0] == resultingName) {
+                    j = i;
+                }
+            }
+
+            conversionFromUSDtoResult = currencyConversionRates[j];
+
+            conversionRate = (1.0 / conversionFromInputToUSD) * conversionFromUSDtoResult;
+
+        } else {
+            int j = 0;
+        
+            for (int i = 0; i < currencyNames.length; i++) {
+                if (currencyNames[i][0] == resultingName) {
+                    j = i;
+                }
+            }
+    
+            conversionRate = currencyConversionRates[j];
+        }
+        
+        return conversionRate;
     }
 }

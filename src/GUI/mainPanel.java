@@ -36,15 +36,11 @@ public class mainPanel extends JPanel implements ActionListener {
         resultTextField = new JTextField("result");
         resultTextField.setPreferredSize(new Dimension(100, 30));
 
-        String currencyListA[] = {
-            "USD"
-        };
-
         String currenciesList[] = {
             "USD", "EUR", "GBP", "INR", "AUD", "CAD", "SGD", "CHF"
         };
         
-        intialCurrencyDropdown = new JComboBox<>(currencyListA);
+        intialCurrencyDropdown = new JComboBox<>(currenciesList);
         resultingCurrencyDropdown = new JComboBox<>(currenciesList);
 
         submitButton = new JButton("Submit!");
