@@ -5,7 +5,10 @@ public class currencyIndex {
         {"USD", "US Dollar"}, {"EUR", "Euro"}, 
         {"GBP", "British Pound"}, {"INR", "Indian Rupee"}, 
         {"AUD", "Australian Dollar"}, {"CAD", "Canadian Dollar"}, 
-        {"SGD", "Singapore Dollar"}, {"CHF", "Swiss Franc"}
+        {"SGD", "Singapore Dollar"}, {"CHF", "Swiss Franc"},
+        {"JPY", "Japanese Yen"}, {"THB", "Thai Baht"},
+        {"PHP", "Philippine Peso"}, {"EGP", "Egyptian Pound"},
+        {"MYR", "Malaysian Ringgit"}, {"CNY", "Chinese Yuan Renminbi"}
     };
 
     // from https://www.xe.com/currencytables/?from=USD&date=2024-02-25#table-section
@@ -20,6 +23,12 @@ public class currencyIndex {
         1.3504983975127547,         // CAD
         1.3433559449788466,         // SGD
         0.8811734628276657,         // CHF
+        150.51292150487106,         // JPY
+        35.979050064956745,         // THB
+        55.89806446352491,          // PHP
+        30.896834770188953,         // EGP
+        4.775853402380541,          // MYR
+        7.19525427640289            // CNY
     };
 
     public currencyIndex() {
