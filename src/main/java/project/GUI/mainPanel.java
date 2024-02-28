@@ -45,12 +45,12 @@ public class mainPanel extends JPanel implements ActionListener {
         inputCurrencyPanel = new JPanel();
         inputCurrencyPanel.setLayout(new BorderLayout(0, 15));
         inputCurrencyPanel.setBackground(backgroundColor);
-        inputCurrencyLabel = new JLabel("USD", SwingConstants.CENTER);
+        inputCurrencyLabel = new JLabel("US Dollar", SwingConstants.CENTER);
 
         resultCurrencyPanel = new JPanel();
         resultCurrencyPanel.setLayout(new BorderLayout(0, 15));
         resultCurrencyPanel.setBackground(backgroundColor);
-        resultCurrencyLabel = new JLabel("USD", SwingConstants.CENTER);
+        resultCurrencyLabel = new JLabel("US Dollar", SwingConstants.CENTER);
 
         inputTextField = new JTextField("input");
         inputTextField.setPreferredSize(new Dimension(100, 30));
