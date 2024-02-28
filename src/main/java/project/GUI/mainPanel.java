@@ -95,8 +95,8 @@ public class mainPanel extends JPanel implements ActionListener {
             func = new Func(inputCurrencyAmt, fromCurrency, resultingCurrency);
 
             resultTextField.setText(String.valueOf(func.calculate()));
-            inputCurrencyLabel.setText(fromCurrency);
-            resultCurrencyLabel.setText(resultingCurrency);
+            inputCurrencyLabel.setText(func.getFullName(fromCurrency));
+            resultCurrencyLabel.setText(func.getFullName(resultingCurrency));
         }
     }
 }

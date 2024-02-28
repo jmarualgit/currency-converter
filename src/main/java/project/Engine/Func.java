@@ -28,4 +28,8 @@ public class Func {
 
         return roundedAns;
     }
+
+    public String getFullName(String abbv) {
+        return currencyIndex.getFullCurrencyName(abbv);
+    }
 }

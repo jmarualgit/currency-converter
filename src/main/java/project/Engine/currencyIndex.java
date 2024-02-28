@@ -35,6 +35,18 @@ public class currencyIndex {
 
     }
 
+    public static String getFullCurrencyName(String currencyAbbreviation) {
+        String fullName = "";
+
+        for (int i = 0; i < currencyNames.length; i++) {
+            if (currencyNames[i][0] == currencyAbbreviation) {
+                fullName = currencyNames[i][1];
+            }
+        }
+
+        return fullName;
+    }
+
     public static double getConversionRate(String inputName, String resultingName) {
         double conversionRate = 0;
         
