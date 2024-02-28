@@ -7,11 +7,11 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class MyFrame extends JFrame {
-    private int length = 800;
+    private int length = 500;
 
-    private Dimension containerSize = new Dimension(length, 800);
-    private Dimension headerSize = new Dimension(length, 150);
-    private Dimension mainSize = new Dimension(length, 650);
+    private Dimension containerSize = new Dimension(length, length);
+    private Dimension headerSize = new Dimension(length, length / 5);
+    private Dimension mainSize = new Dimension(length, (length / 10) * 6);
 
     public MyFrame () {
         this.setLayout(new BorderLayout(0, 0));
