@@ -2,13 +2,13 @@ package project.Engine;
 
 public class currencyIndex {
     private static String[][] currencyNames = {
-        {"USD", "US Dollar"}, {"EUR", "Euro"}, 
-        {"GBP", "British Pound"}, {"INR", "Indian Rupee"}, 
-        {"AUD", "Australian Dollar"}, {"CAD", "Canadian Dollar"}, 
-        {"SGD", "Singapore Dollar"}, {"CHF", "Swiss Franc"},
-        {"JPY", "Japanese Yen"}, {"THB", "Thai Baht"},
-        {"PHP", "Philippine Peso"}, {"EGP", "Egyptian Pound"},
-        {"MYR", "Malaysian Ringgit"}, {"CNY", "Chinese Yuan Renminbi"}
+        {"USD", "US Dollar"}, {"AUD", "Australian Dollar"},
+        {"CAD", "Canadian Dollar"}, {"CHF", "Swiss Franc"},
+        {"CNY", "Chinese Yuan Renminbi"}, {"EGP", "Egyptian Pound"},
+        {"EUR", "Euro"}, {"GBP", "British Pound"},
+        {"INR", "Indian Rupee"}, {"JPY", "Japanese Yen"},
+        {"MYR", "Malaysian Ringgit"}, {"PHP", "Philippine Peso"}, 
+        {"SGD", "Singapore Dollar"}, {"THB", "Thai Baht"}
     };
 
     // from https://www.xe.com/currencytables/?from=USD&date=2024-02-25#table-section
@@ -16,19 +16,19 @@ public class currencyIndex {
     // FROM USD
     private static Double[] currencyConversionRates = {
         1.0,                        // USD
+        1.5242213075073965,         // AUD
+        1.3504983975127547,         // CAD
+        0.8811734628276657,         // CHF
+        7.19525427640289,           // CNY
+        30.896834770188953,         // EGP
         0.9227329074620213,         // EUR
         0.7895958240672866,         // GBP
         82.86140364851931,          // INR
-        1.5242213075073965,         // AUD
-        1.3504983975127547,         // CAD
-        1.3433559449788466,         // SGD
-        0.8811734628276657,         // CHF
         150.51292150487106,         // JPY
-        35.979050064956745,         // THB
-        55.89806446352491,          // PHP
-        30.896834770188953,         // EGP
         4.775853402380541,          // MYR
-        7.19525427640289            // CNY
+        55.89806446352491,          // PHP
+        1.3433559449788466,         // SGD
+        35.979050064956745,         // THB
     };
 
     public currencyIndex() {
