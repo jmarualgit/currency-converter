@@ -1,14 +1,18 @@
 package project.GUI;
 import project.Engine.Func;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 
 public class mainPanel extends JPanel implements ActionListener {
@@ -16,9 +20,15 @@ public class mainPanel extends JPanel implements ActionListener {
     JButton submitButton;
 
     JTextField inputTextField;
-    JTextField resultTextField;
+    JLabel resultTextField;
     JComboBox<String> intialCurrencyDropdown;
     JComboBox<String> resultingCurrencyDropdown;
+
+    JPanel inputCurrencyPanel;
+    JPanel resultCurrencyPanel;
+
+    JLabel inputCurrencyLabel;
+    JLabel resultCurrencyLabel;
 
     Func func; 
 
@@ -27,14 +37,27 @@ public class mainPanel extends JPanel implements ActionListener {
 
     private Double inputCurrencyAmt;
 
+    private Color backgroundColor = new Color(220, 220, 220); 
+
     mainPanel () {
-        this.setBackground(new Color(220, 220, 220));
+        this.setBackground(backgroundColor);
+
+        inputCurrencyPanel = new JPanel();
+        inputCurrencyPanel.setLayout(new BorderLayout(0, 15));
+        inputCurrencyPanel.setBackground(backgroundColor);
+        inputCurrencyLabel = new JLabel("USD", SwingConstants.CENTER);
+
+        resultCurrencyPanel = new JPanel();
+        resultCurrencyPanel.setLayout(new BorderLayout(0, 15));
+        resultCurrencyPanel.setBackground(backgroundColor);
+        resultCurrencyLabel = new JLabel("USD", SwingConstants.CENTER);
 
         inputTextField = new JTextField("input");
         inputTextField.setPreferredSize(new Dimension(100, 30));
 
-        resultTextField = new JTextField("result");
+        resultTextField = new JLabel("result");
         resultTextField.setPreferredSize(new Dimension(100, 30));
+        resultTextField.setBorder(BorderFactory.createLineBorder(new Color(150, 150, 150)));
 
         String currenciesList[] = {
             "USD", "AUD", "CAD", "CHF", "CNY", "EGP", "EUR", "GBP", "INR", 
@@ -48,10 +71,16 @@ public class mainPanel extends JPanel implements ActionListener {
 
         submitButton.addActionListener(this);
 
-        this.add(inputTextField);
-        this.add(intialCurrencyDropdown);
-        this.add(resultTextField);
-        this.add(resultingCurrencyDropdown);
+        inputCurrencyPanel.add(inputCurrencyLabel, BorderLayout.NORTH);
+        inputCurrencyPanel.add(inputTextField, BorderLayout.WEST);
+        inputCurrencyPanel.add(intialCurrencyDropdown, BorderLayout.EAST);
+
+        resultCurrencyPanel.add(resultCurrencyLabel, BorderLayout.NORTH);
+        resultCurrencyPanel.add(resultTextField, BorderLayout.WEST);
+        resultCurrencyPanel.add(resultingCurrencyDropdown, BorderLayout.EAST);
+
+        this.add(inputCurrencyPanel);
+        this.add(resultCurrencyPanel);
         this.add(submitButton);
     }
 
@@ -66,6 +95,8 @@ public class mainPanel extends JPanel implements ActionListener {
             func = new Func(inputCurrencyAmt, fromCurrency, resultingCurrency);
 
             resultTextField.setText(String.valueOf(func.calculate()));
+            inputCurrencyLabel.setText(fromCurrency);
+            resultCurrencyLabel.setText(resultingCurrency);
         }
     }
 }
