@@ -17,6 +17,7 @@ public class MyFrame extends JFrame {
         this.setLayout(new BorderLayout(0, 0));
         this.setSize(containerSize);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setLocationRelativeTo(null);
 
         JPanel headerPanel = new headerPanel();
         JPanel mainPanel = new mainPanel();
